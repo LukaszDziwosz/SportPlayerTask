@@ -22,19 +22,6 @@ class DashboardTabBarController: UITabBarController {
            self.navigationController?.navigationBar.prefersLargeTitles = true
        }
 
-    
-
-}
-extension DashboardTabBarController: UITabBarControllerDelegate {
-    
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        self.navigationItem.title = viewController.title
-    }
-    
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        
-            return true;
-        }
     private func tabBarSetup() {
         let item1 = EventsViewController()
         let item2 = ScheduleViewController()
@@ -51,5 +38,14 @@ extension DashboardTabBarController: UITabBarControllerDelegate {
         self.tabBar.tintColor = .systemGray
         self.tabBar.unselectedItemTintColor = .systemGray
     }
+
+}
+
+extension DashboardTabBarController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        self.navigationItem.title = viewController.title
+    }
+    
     
 }
