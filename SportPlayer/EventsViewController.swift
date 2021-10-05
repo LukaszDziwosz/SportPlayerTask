@@ -7,11 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EventsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = UIColor.green
+        self.title = "Events"
+        print("Event Screen")
     }
 
 
