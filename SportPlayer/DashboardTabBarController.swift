@@ -16,6 +16,7 @@ class DashboardTabBarController: UITabBarController {
         self.tabBar.isTranslucent = false
         self.tabBar.tintColor = .systemGray
         self.tabBar.unselectedItemTintColor = .systemGray
+        self.navigationItem.title = "Sport Player"
     }
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
@@ -35,8 +36,12 @@ class DashboardTabBarController: UITabBarController {
 }
 extension DashboardTabBarController: UITabBarControllerDelegate {
     
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        self.navigationItem.title = viewController.title
+    }
+    
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-            print("Should select viewController: \(viewController.title ?? "") ?")
+        
             return true;
         }
     

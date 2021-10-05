@@ -13,13 +13,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        if let windowScene = scene as? UIWindowScene {
-                let window = UIWindow(windowScene: windowScene)
-                window.rootViewController = DashboardTabBarController()
-                self.window = window
-                window.makeKeyAndVisible()
-        } else { return }
-       // guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+            window?.windowScene = windowScene
+            
+            let viewController1 = DashboardTabBarController()
+            //let viewController2 = EventsViewController()
+        //  let viewController3 = ScheduleViewController()
+            let navViewController = UINavigationController(rootViewController: viewController1)
+           // navViewController.viewControllers = [viewController1, viewController2, viewController3]
+            window?.rootViewController = navViewController
+            window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

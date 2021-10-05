@@ -14,7 +14,7 @@ class ScheduleViewController: UIViewController {
 
         view.backgroundColor = UIColor.red
         self.title = "Schedule"
-        print("Schedule Screen")
+       
     }
     
 
