@@ -62,15 +62,23 @@
 			children = (
 				D0DF5D34270CC3CB009374E7 /* AppDelegate.swift */,
 				D0DF5D36270CC3CB009374E7 /* SceneDelegate.swift */,
-				D0DF5D38270CC3CB009374E7 /* EventsViewController.swift */,
-				D0DF5D48270CC540009374E7 /* ScheduleViewController.swift */,
-				D0DF5D4A270CC636009374E7 /* DashboardTabBarController.swift */,
+				D0DF5D4C270CE22E009374E7 /* Controllers */,
 				D0DF5D3A270CC3CB009374E7 /* Main.storyboard */,
 				D0DF5D3D270CC3D2009374E7 /* Assets.xcassets */,
 				D0DF5D3F270CC3D2009374E7 /* LaunchScreen.storyboard */,
 				D0DF5D42270CC3D2009374E7 /* Info.plist */,
 			);
 			path = SportPlayer;
+			sourceTree = "<group>";
+		};
+		D0DF5D4C270CE22E009374E7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0DF5D4A270CC636009374E7 /* DashboardTabBarController.swift */,
+				D0DF5D48270CC540009374E7 /* ScheduleViewController.swift */,
+				D0DF5D38270CC3CB009374E7 /* EventsViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

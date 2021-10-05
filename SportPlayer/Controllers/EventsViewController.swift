@@ -14,7 +14,6 @@ class EventsViewController: UIViewController {
         
         view.backgroundColor = UIColor.green
         self.title = "Events"
-        
     }
 
 
