@@ -19,6 +19,8 @@
 		D0DF5D51270CF0CC009374E7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF5D50270CF0CC009374E7 /* Event.swift */; };
 		D0DF5D54270CF274009374E7 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF5D53270CF274009374E7 /* Schedule.swift */; };
 		D0DF5D56270CFDF0009374E7 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF5D55270CFDF0009374E7 /* EventViewModel.swift */; };
+		D0DF5D5A270D088F009374E7 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF5D59270D088F009374E7 /* EventTableViewCell.swift */; };
+		D0DF5D5D270D0AE0009374E7 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF5D5C270D0AE0009374E7 /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		D0DF5D50270CF0CC009374E7 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		D0DF5D53270CF274009374E7 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		D0DF5D55270CFDF0009374E7 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		D0DF5D59270D088F009374E7 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		D0DF5D5C270D0AE0009374E7 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 		D0DF5D33270CC3CB009374E7 /* SportPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				D0DF5D5B270D0A88009374E7 /* Extensions */,
+				D0DF5D58270D0855009374E7 /* Cells */,
 				D0DF5D57270CFDFE009374E7 /* ViewModels */,
 				D0DF5D52270CF0D4009374E7 /* Model */,
 				D0DF5D4D270CEEB5009374E7 /* Services */,
@@ -115,6 +121,22 @@
 				D0DF5D55270CFDF0009374E7 /* EventViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D0DF5D58270D0855009374E7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D0DF5D59270D088F009374E7 /* EventTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D0DF5D5B270D0A88009374E7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0DF5D5C270D0AE0009374E7 /* Constraints.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,10 +214,12 @@
 				D0DF5D56270CFDF0009374E7 /* EventViewModel.swift in Sources */,
 				D0DF5D4B270CC636009374E7 /* DashboardTabBarController.swift in Sources */,
 				D0DF5D35270CC3CB009374E7 /* AppDelegate.swift in Sources */,
+				D0DF5D5D270D0AE0009374E7 /* Constraints.swift in Sources */,
 				D0DF5D37270CC3CB009374E7 /* SceneDelegate.swift in Sources */,
 				D0DF5D51270CF0CC009374E7 /* Event.swift in Sources */,
 				D0DF5D49270CC540009374E7 /* ScheduleViewController.swift in Sources */,
 				D0DF5D54270CF274009374E7 /* Schedule.swift in Sources */,
+				D0DF5D5A270D088F009374E7 /* EventTableViewCell.swift in Sources */,
 				D0DF5D4F270CEF22009374E7 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
