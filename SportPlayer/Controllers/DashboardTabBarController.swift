@@ -33,10 +33,10 @@ class DashboardTabBarController: UITabBarController {
         self.viewControllers = controllers
     }
     private func tabBarUiSetup() {
-        self.tabBar.barTintColor = .systemGray
-        self.tabBar.isTranslucent = false
-        self.tabBar.tintColor = .systemGray
-        self.tabBar.unselectedItemTintColor = .systemGray
+       // self.tabBar.barTintColor = .blue
+       // self.tabBar.isTranslucent = false
+       // self.tabBar.tintColor = .systemFill
+        //self.tabBar.unselectedItemTintColor = .blue
     }
 
 }

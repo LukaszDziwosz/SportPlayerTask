@@ -9,7 +9,7 @@ import UIKit
 
 class EventsViewController: UITableViewController  {
     
-    let cellId = "cellId"
+    private let cellId = "cellId"
     
     private var eventListVM: EventListViewModel?
 
@@ -47,8 +47,6 @@ class EventsViewController: UITableViewController  {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! EventTableViewCell
        let eventVM = eventListVM?.eventAtIndex(indexPath.row)
         cell.titleLabel.text = eventVM?.title
-        
-        
         
         return cell
     }

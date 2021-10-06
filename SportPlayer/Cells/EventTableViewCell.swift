@@ -9,11 +9,6 @@ import UIKit
 
 class EventTableViewCell: UITableViewCell {
 
-//    var event: Event? {
-//        didSet {
-//            titleLabel.text = event?.title
-//        }
-//    }
     
      let titleLabel: UILabel = {
         let lbl = UILabel()
