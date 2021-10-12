@@ -5,13 +5,41 @@
 //  Created by Lukasz Dziwosz on 05/10/2021.
 //
 
-import Foundation
+import UIKit
 
-struct EventListViewModel {
+protocol EventListViewModelProtocol {
+    func fetch()
+    func numberOfRowsInSection (_ section: Int) -> Int
+    func eventAtIndex (_ index: Int) -> EventViewModel
+    var tableView: UITableView? { get set }
+}
+
+class EventListViewModel: EventListViewModelProtocol {
+
+    private let manager: EventListManagerProtocol
+    private var events:[Event] = []
+    weak var tableView: UITableView?
     
-    let events: [Event]
+    init(manager: EventListManagerProtocol = EventListManager()) {
+        self.manager = manager
+    }
     
-    var numberOfSections: Int { return 1 }
+    func fetch(){
+        manager.getEvents { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let events):
+                self.events = events
+                DispatchQueue.main.async {
+                    self.tableView?.reloadData()
+                }
+              
+            case .failure(let error):
+                print(error.localizedDescription)
+                
+            }
+        }
+    }
     
     func numberOfRowsInSection (_ section: Int) -> Int {
         return events.count
@@ -24,14 +52,16 @@ struct EventListViewModel {
 
 struct EventViewModel {
     
+
     private let event: Event
 
     init(_ event: Event) {
         self.event = event
     }
-    
+
     var title: String { return event.title }
-    private var subtitle: String { return event.subtitle }
-    private var imageUrl: String { return event.imageUrl }
-    private var date: String { return event.date }
+    var subtitle: String { return event.subtitle }
+    var imageUrl: String { return event.imageUrl }
+    var date: String { return DateFormatter.string(apiDate: event.date) }
+    var videoUrl: String {return event.videoUrl}
 }

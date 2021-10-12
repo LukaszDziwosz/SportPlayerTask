@@ -15,3 +15,5 @@ struct Event: Codable {
     let imageUrl: String
     let videoUrl: String
 }
+
+

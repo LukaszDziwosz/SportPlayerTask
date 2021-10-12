@@ -7,48 +7,71 @@
 
 import UIKit
 
-class EventsViewController: UITableViewController  {
+class EventsViewController: UIViewController {
+  
+    private var viewModel: EventListViewModelProtocol?
+   
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: UIScreen.main.bounds, style: UITableView.Style.plain)
+    return tableView
+    }()
     
-    private let cellId = "cellId"
+    init (viewModel: EventListViewModelProtocol){
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        fetchEvents()
+        setupTableView()
+    }
     
-    private var eventListVM: EventListViewModel?
-
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        self.title = "Events"
-        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: cellId)
-        getEvents()
         
+       }
+    
+    private func fetchEvents() {
+        viewModel?.tableView = tableView
+        viewModel?.fetch()
     }
-    private func getEvents(){
-     
-        APIClient.fetchData {[weak self] result in
-          switch result {
-            case .success(let data):
-                DispatchQueue.main.async {
-                    self?.eventListVM = EventListViewModel(events: data)
-                    self?.tableView.reloadData()
 
-                }
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.cellIdentifier)
+        tableView.backgroundColor = .clear
+        view.addSubview(tableView)
+    }
 
-            case .failure(let error):
-                print("Request failed with error: \(error)")
-            }
-        }
+        
+}
+
+
+extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
     }
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        eventListVM?.numberOfSections ?? 1
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let viewModel = viewModel else { return .zero }
+        return viewModel.numberOfRowsInSection(section)
+      
     }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        eventListVM?.numberOfRowsInSection(section) ?? 10
-    }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! EventTableViewCell
-       let eventVM = eventListVM?.eventAtIndex(indexPath.row)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.cellIdentifier, for: indexPath) as! EventTableViewCell
+        
+        let eventVM = self.viewModel?.eventAtIndex(indexPath.row)
         cell.titleLabel.text = eventVM?.title
-        
+        cell.dateLabel.text = eventVM?.date
+
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let eventVM = self.viewModel?.eventAtIndex(indexPath.row)
+       
     }
 }
 
