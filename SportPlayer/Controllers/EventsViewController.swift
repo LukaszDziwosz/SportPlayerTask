@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 class EventsViewController: UIViewController {
   
@@ -62,16 +63,20 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.cellIdentifier, for: indexPath) as! EventTableViewCell
-        
         let eventVM = self.viewModel?.eventAtIndex(indexPath.row)
         cell.titleLabel.text = eventVM?.title
         cell.dateLabel.text = eventVM?.date
-
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let eventVM = self.viewModel?.eventAtIndex(indexPath.row)
-       
+        let videoURL = URL(string: eventVM!.videoUrl)
+        let player = AVPlayer(url: videoURL!)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.present(playerViewController, animated: true) {
+            playerViewController.player!.play()
+        }
     }
 }
 

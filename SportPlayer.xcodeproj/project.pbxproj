@@ -11,8 +11,6 @@
 		D0A1D50A2713730200418F21 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D5092713730200418F21 /* Endpoint.swift */; };
 		D0CF22F12714888A00B48BB1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF22F02714888A00B48BB1 /* TableViewCell.swift */; };
 		D0CF22F32714C91A00B48BB1 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF22F22714C91A00B48BB1 /* DateFormatter.swift */; };
-		D0CF22F62714D5F200B48BB1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF22F52714D5F200B48BB1 /* PlayerView.swift */; };
-		D0CF22F8271558F000B48BB1 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF22F7271558F000B48BB1 /* PlayerViewController.swift */; };
 		D0DF5D35270CC3CB009374E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF5D34270CC3CB009374E7 /* AppDelegate.swift */; };
 		D0DF5D37270CC3CB009374E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF5D36270CC3CB009374E7 /* SceneDelegate.swift */; };
 		D0DF5D39270CC3CB009374E7 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF5D38270CC3CB009374E7 /* EventsViewController.swift */; };
@@ -33,8 +31,6 @@
 		D0A1D5092713730200418F21 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		D0CF22F02714888A00B48BB1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		D0CF22F22714C91A00B48BB1 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
-		D0CF22F52714D5F200B48BB1 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		D0CF22F7271558F000B48BB1 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		D0DF5D31270CC3CB009374E7 /* SportPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0DF5D34270CC3CB009374E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0DF5D36270CC3CB009374E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				D0DF5D58270D0855009374E7 /* Cells */,
-				D0CF22F52714D5F200B48BB1 /* PlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				D0DF5D38270CC3CB009374E7 /* EventsViewController.swift */,
-				D0CF22F7271558F000B48BB1 /* PlayerViewController.swift */,
 				D0DF5D4A270CC636009374E7 /* TabBar.swift */,
 				D0DF5D48270CC540009374E7 /* ScheduleViewController.swift */,
 			);
@@ -243,7 +237,6 @@
 				D0DF5D39270CC3CB009374E7 /* EventsViewController.swift in Sources */,
 				D0DF5D56270CFDF0009374E7 /* EventViewModel.swift in Sources */,
 				D0DF5D4B270CC636009374E7 /* TabBar.swift in Sources */,
-				D0CF22F62714D5F200B48BB1 /* PlayerView.swift in Sources */,
 				D0A1D50A2713730200418F21 /* Endpoint.swift in Sources */,
 				D0DF5D35270CC3CB009374E7 /* AppDelegate.swift in Sources */,
 				D0CF22F12714888A00B48BB1 /* TableViewCell.swift in Sources */,
@@ -256,7 +249,6 @@
 				D0DF5D54270CF274009374E7 /* Schedule.swift in Sources */,
 				D0DF5D5A270D088F009374E7 /* EventTableViewCell.swift in Sources */,
 				D0DF5D4F270CEF22009374E7 /* Networking.swift in Sources */,
-				D0CF22F8271558F000B48BB1 /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
