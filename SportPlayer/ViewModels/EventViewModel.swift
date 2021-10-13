@@ -30,7 +30,7 @@ class EventListViewModel: EventListViewModelProtocol {
             guard let self = self else { return }
             switch result {
             case .success(let events):
-                self.events = events
+                self.events = events.sorted(by: {$0.date.compare($1.date) == .orderedAscending})
                 DispatchQueue.main.async {
                     self.tableView?.reloadData()
                 }

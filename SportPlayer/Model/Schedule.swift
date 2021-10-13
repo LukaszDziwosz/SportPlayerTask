@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Shedule: Codable {
+enum Section {
+    case main
+}
+
+struct Shedule: Codable, Hashable {
     let id: String
     let title: String
     let subtitle: String

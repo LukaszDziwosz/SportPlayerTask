@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D07DEE45271741A60044834C /* DiffableDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = D07DEE44271741A60044834C /* DiffableDataSources */; };
 		D0A1D50827136B1B00418F21 /* EventListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D50727136B1B00418F21 /* EventListManager.swift */; };
 		D0A1D50A2713730200418F21 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D5092713730200418F21 /* Endpoint.swift */; };
 		D0CF22F12714888A00B48BB1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF22F02714888A00B48BB1 /* TableViewCell.swift */; };
@@ -54,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07DEE45271741A60044834C /* DiffableDataSources in Frameworks */,
 				D0CF22FB27157B4400B48BB1 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +186,7 @@
 			name = SportPlayer;
 			packageProductDependencies = (
 				D0CF22FA27157B4400B48BB1 /* Kingfisher */,
+				D07DEE44271741A60044834C /* DiffableDataSources */,
 			);
 			productName = SportPlayer;
 			productReference = D0DF5D31270CC3CB009374E7 /* SportPlayer.app */;
@@ -215,6 +218,7 @@
 			mainGroup = D0DF5D28270CC3CB009374E7;
 			packageReferences = (
 				D0CF22F927157B4400B48BB1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				D07DEE43271741A60044834C /* XCRemoteSwiftPackageReference "DiffableDataSources" */,
 			);
 			productRefGroup = D0DF5D32270CC3CB009374E7 /* Products */;
 			projectDirPath = "";
@@ -470,6 +474,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D07DEE43271741A60044834C /* XCRemoteSwiftPackageReference "DiffableDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ra1028/DiffableDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
 		D0CF22F927157B4400B48BB1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -481,6 +493,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D07DEE44271741A60044834C /* DiffableDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D07DEE43271741A60044834C /* XCRemoteSwiftPackageReference "DiffableDataSources" */;
+			productName = DiffableDataSources;
+		};
 		D0CF22FA27157B4400B48BB1 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D0CF22F927157B4400B48BB1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
