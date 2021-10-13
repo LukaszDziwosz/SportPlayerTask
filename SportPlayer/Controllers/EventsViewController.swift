@@ -7,6 +7,7 @@
 
 import UIKit
 import AVKit
+import Kingfisher
 
 class EventsViewController: UIViewController {
   
@@ -44,7 +45,17 @@ class EventsViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.cellIdentifier)
         tableView.backgroundColor = .clear
+        tableView.rowHeight = 90
         view.addSubview(tableView)
+    }
+    private func setupVideoPlayer(stringURL: String) {
+        let videoURL = URL(string: stringURL)
+        let player = AVPlayer(url: videoURL!)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.present(playerViewController, animated: true) {
+            playerViewController.player!.play()
+        }
     }
 
         
@@ -61,22 +72,22 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
         return viewModel.numberOfRowsInSection(section)
       
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.cellIdentifier, for: indexPath) as! EventTableViewCell
+        let processor = RoundCornerImageProcessor(cornerRadius: 20)
         let eventVM = self.viewModel?.eventAtIndex(indexPath.row)
         cell.titleLabel.text = eventVM?.title
+        cell.subtitleLabel.text = eventVM?.subtitle
         cell.dateLabel.text = eventVM?.date
+        cell.eventImageView.kf.indicatorType = .activity
+        cell.eventImageView.kf.setImage(with: URL(string: eventVM!.imageUrl),  options: [.processor(processor)])
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let eventVM = self.viewModel?.eventAtIndex(indexPath.row)
-        let videoURL = URL(string: eventVM!.videoUrl)
-        let player = AVPlayer(url: videoURL!)
-        let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
-        self.present(playerViewController, animated: true) {
-            playerViewController.player!.play()
-        }
+        setupVideoPlayer(stringURL: eventVM?.videoUrl ?? "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
     }
+    
 }
 

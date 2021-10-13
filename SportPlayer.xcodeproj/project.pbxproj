@@ -11,6 +11,7 @@
 		D0A1D50A2713730200418F21 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D5092713730200418F21 /* Endpoint.swift */; };
 		D0CF22F12714888A00B48BB1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF22F02714888A00B48BB1 /* TableViewCell.swift */; };
 		D0CF22F32714C91A00B48BB1 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF22F22714C91A00B48BB1 /* DateFormatter.swift */; };
+		D0CF22FB27157B4400B48BB1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D0CF22FA27157B4400B48BB1 /* Kingfisher */; };
 		D0DF5D35270CC3CB009374E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF5D34270CC3CB009374E7 /* AppDelegate.swift */; };
 		D0DF5D37270CC3CB009374E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF5D36270CC3CB009374E7 /* SceneDelegate.swift */; };
 		D0DF5D39270CC3CB009374E7 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF5D38270CC3CB009374E7 /* EventsViewController.swift */; };
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0CF22FB27157B4400B48BB1 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +182,9 @@
 			dependencies = (
 			);
 			name = SportPlayer;
+			packageProductDependencies = (
+				D0CF22FA27157B4400B48BB1 /* Kingfisher */,
+			);
 			productName = SportPlayer;
 			productReference = D0DF5D31270CC3CB009374E7 /* SportPlayer.app */;
 			productType = "com.apple.product-type.application";
@@ -208,6 +213,9 @@
 				Base,
 			);
 			mainGroup = D0DF5D28270CC3CB009374E7;
+			packageReferences = (
+				D0CF22F927157B4400B48BB1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = D0DF5D32270CC3CB009374E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -460,6 +468,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D0CF22F927157B4400B48BB1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D0CF22FA27157B4400B48BB1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0CF22F927157B4400B48BB1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D0DF5D29270CC3CB009374E7 /* Project object */;
 }

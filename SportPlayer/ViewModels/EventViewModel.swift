@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol EventListViewModelProtocol {
     func fetch()
@@ -33,13 +34,13 @@ class EventListViewModel: EventListViewModelProtocol {
                 DispatchQueue.main.async {
                     self.tableView?.reloadData()
                 }
-              
             case .failure(let error):
-                print(error.localizedDescription)
-                
-            }
+                let message = error.localizedDescription
+                print(message)
+                }
         }
     }
+  
     
     func numberOfRowsInSection (_ section: Int) -> Int {
         return events.count
@@ -52,16 +53,15 @@ class EventListViewModel: EventListViewModelProtocol {
 
 struct EventViewModel {
     
-
     private let event: Event
 
     init(_ event: Event) {
         self.event = event
     }
-
+   
     var title: String { return event.title }
     var subtitle: String { return event.subtitle }
-    var imageUrl: String { return event.imageUrl }
+    var imageUrl: String { return event.imageUrl ?? "https://img.lovepik.com/element/40030/3721.png_860.png" }
     var date: String { return DateFormatter.string(apiDate: event.date) }
     var videoUrl: String {return event.videoUrl}
 }
