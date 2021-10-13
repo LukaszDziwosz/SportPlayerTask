@@ -10,19 +10,20 @@ import DiffableDataSources
 
 class ScheduleViewController: UIViewController {
     
-    private var viewModel: ScheduleViewModelProtocol?
+    private var viewModel: ScheduleListViewModelProtocol?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: UIScreen.main.bounds, style: UITableView.Style.plain)
     return tableView
     }()
-    private lazy var dataSource = TableViewDiffableDataSource<Section, Schedule>(tableView: tableView) { tableView, indexPath, user in
+    private lazy var dataSource = TableViewDiffableDataSource<Section, Schedule>(tableView: tableView) { tableView, indexPath, schedule in
             let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.cellIdentifier, for: indexPath) as! EventTableViewCell
+                cell.titleLabel.text = schedule.title
             
             return cell
         }
 
-    init(viewModel: ScheduleViewModelProtocol){
+    init(viewModel: ScheduleListViewModelProtocol){
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
         fetchSchedules()
@@ -38,7 +39,16 @@ class ScheduleViewController: UIViewController {
         }
     
     private func fetchSchedules() {
-        viewModel?.fetchSchedules()
+        viewModel?.fetchSchedules{ [weak self] result in
+        guard let self = self else { return }
+        var snapshot = DiffableDataSourceSnapshot<Section, Schedule>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(result, toSection: .main)
+            DispatchQueue.main.async {
+                self.dataSource.apply(snapshot)
+            }
+        
+        }
     }
     private func setupTableView() {
         viewModel?.tableView = tableView
@@ -47,7 +57,9 @@ class ScheduleViewController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.rowHeight = 90
         view.addSubview(tableView)
+
     }
+
 
 }
 extension ScheduleViewController: UITableViewDelegate {

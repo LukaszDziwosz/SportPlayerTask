@@ -57,10 +57,7 @@ class EventsViewController: UIViewController {
             playerViewController.player!.play()
         }
     }
-
-        
 }
-
 
 extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     

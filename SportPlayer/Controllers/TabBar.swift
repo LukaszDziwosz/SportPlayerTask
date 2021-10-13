@@ -31,7 +31,7 @@ class TabBar: UITabBarController {
 
     func setupVCs() {
         let viewModel1 = EventListViewModel()
-        let viewModel2 = ScheduleViewModel()
+        let viewModel2 = ScheduleListViewModel()
           viewControllers = [
             createNavController(for: EventsViewController(viewModel: viewModel1), title: NSLocalizedString("Events", comment: ""), image: UIImage(systemName: "house")!),
             createNavController(for: ScheduleViewController(viewModel: viewModel2), title: NSLocalizedString("Schedule", comment: ""), image: UIImage(systemName: "magnifyingglass")!),

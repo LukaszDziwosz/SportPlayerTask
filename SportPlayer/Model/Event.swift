@@ -12,7 +12,7 @@ struct Event: Codable {
     let title: String
     let subtitle: String
     let date: String
-    let imageUrl: String?
+    let imageUrl: String
     let videoUrl: String
 }
 

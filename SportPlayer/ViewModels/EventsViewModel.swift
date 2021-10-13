@@ -9,10 +9,10 @@ import UIKit
 
 protocol EventListViewModelProtocol {
     
+    var tableView: UITableView? { get set }
     func fetchEvents()
     func numberOfRowsInSection (_ section: Int) -> Int
     func eventAtIndex (_ index: Int) -> EventViewModel
-    var tableView: UITableView? { get set }
 }
 
 class EventListViewModel: EventListViewModelProtocol {
@@ -62,7 +62,7 @@ struct EventViewModel {
    
     var title: String { return event.title }
     var subtitle: String { return event.subtitle }
-    var imageUrl: String { return event.imageUrl ?? "https://img.lovepik.com/element/40030/3721.png_860.png" }
+    var imageUrl: String { return event.imageUrl }
     var date: String { return DateFormatter.string(apiDate: event.date) }
     var videoUrl: String {return event.videoUrl}
 }
