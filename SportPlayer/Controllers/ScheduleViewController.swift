@@ -25,6 +25,7 @@ class ScheduleViewController: UIViewController {
     init(viewModel: ScheduleViewModelProtocol){
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
+        fetchSchedules()
     }
     
     required init?(coder: NSCoder) {
@@ -35,6 +36,9 @@ class ScheduleViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.cellIdentifier)
+    }
+    private func fetchSchedules() {
+        viewModel?.fetchSchedules()
     }
 
 }

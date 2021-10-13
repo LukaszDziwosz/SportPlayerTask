@@ -13,6 +13,7 @@ typealias FetchEventsCompletion<T: Decodable> = (Result<T, NetworkingError>) -> 
 
 protocol ListManagerProtocol {
     func getEvents(_ completion: @escaping FetchEventsCompletion<[Event]>)
+    func getSchedules(_ completion: @escaping FetchEventsCompletion<[Schedule]>)
 //    func retrieveImage(for event: Event, completion: @escaping FetchImageCompletion)
 }
 
@@ -35,7 +36,7 @@ final class ListManager: ListManagerProtocol {
             }
         }
     }
-    func getScedule(_ completion: @escaping FetchEventsCompletion<[Schedule]>) {
+    func getSchedules(_ completion: @escaping FetchEventsCompletion<[Schedule]>) {
         provider.request([Schedule].self, requestProvider: Endpoint.schedule) { [weak self] response in
             guard let self = self else { return }
             do {

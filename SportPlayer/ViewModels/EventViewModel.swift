@@ -18,7 +18,7 @@ protocol EventListViewModelProtocol {
 class EventListViewModel: EventListViewModelProtocol {
 
     private let manager: ListManagerProtocol
-    private var events:[Event] = []
+    private var events: [Event] = []
     weak var tableView: UITableView?
     
     init(manager: ListManagerProtocol = ListManager()) {

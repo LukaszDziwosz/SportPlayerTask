@@ -19,8 +19,8 @@ class EventsViewController: UIViewController {
     }()
     
     init (viewModel: EventListViewModelProtocol){
-        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
         fetchEvents()
         setupTableView()
     }
