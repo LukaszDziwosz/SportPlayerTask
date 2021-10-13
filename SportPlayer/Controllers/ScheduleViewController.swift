@@ -26,6 +26,7 @@ class ScheduleViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
         fetchSchedules()
+        setupTableView()
     }
     
     required init?(coder: NSCoder) {
@@ -34,11 +35,18 @@ class ScheduleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.cellIdentifier)
-    }
+        }
+    
     private func fetchSchedules() {
         viewModel?.fetchSchedules()
+    }
+    private func setupTableView() {
+        viewModel?.tableView = tableView
+        tableView.delegate = self
+        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.cellIdentifier)
+        tableView.backgroundColor = .clear
+        tableView.rowHeight = 90
+        view.addSubview(tableView)
     }
 
 }
