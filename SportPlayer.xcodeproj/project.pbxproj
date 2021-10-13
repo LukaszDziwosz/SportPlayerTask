@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D07DEE45271741A60044834C /* DiffableDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = D07DEE44271741A60044834C /* DiffableDataSources */; };
-		D0A1D50827136B1B00418F21 /* EventListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D50727136B1B00418F21 /* EventListManager.swift */; };
+		D07DEE4727174CDA0044834C /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DEE4627174CDA0044834C /* ScheduleViewModel.swift */; };
+		D0A1D50827136B1B00418F21 /* ListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D50727136B1B00418F21 /* ListManager.swift */; };
 		D0A1D50A2713730200418F21 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D5092713730200418F21 /* Endpoint.swift */; };
 		D0CF22F12714888A00B48BB1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF22F02714888A00B48BB1 /* TableViewCell.swift */; };
 		D0CF22F32714C91A00B48BB1 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF22F22714C91A00B48BB1 /* DateFormatter.swift */; };
@@ -29,7 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D0A1D50727136B1B00418F21 /* EventListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListManager.swift; sourceTree = "<group>"; };
+		D07DEE4627174CDA0044834C /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		D0A1D50727136B1B00418F21 /* ListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManager.swift; sourceTree = "<group>"; };
 		D0A1D5092713730200418F21 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		D0CF22F02714888A00B48BB1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		D0CF22F22714C91A00B48BB1 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 		D0A1D50627136AFA00418F21 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				D0A1D50727136B1B00418F21 /* EventListManager.swift */,
+				D0A1D50727136B1B00418F21 /* ListManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				D0DF5D55270CFDF0009374E7 /* EventViewModel.swift */,
+				D07DEE4627174CDA0044834C /* ScheduleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -254,9 +257,10 @@
 				D0CF22F12714888A00B48BB1 /* TableViewCell.swift in Sources */,
 				D0DF5D5D270D0AE0009374E7 /* Constraints.swift in Sources */,
 				D0DF5D37270CC3CB009374E7 /* SceneDelegate.swift in Sources */,
-				D0A1D50827136B1B00418F21 /* EventListManager.swift in Sources */,
+				D0A1D50827136B1B00418F21 /* ListManager.swift in Sources */,
 				D0CF22F32714C91A00B48BB1 /* DateFormatter.swift in Sources */,
 				D0DF5D51270CF0CC009374E7 /* Event.swift in Sources */,
+				D07DEE4727174CDA0044834C /* ScheduleViewModel.swift in Sources */,
 				D0DF5D49270CC540009374E7 /* ScheduleViewController.swift in Sources */,
 				D0DF5D54270CF274009374E7 /* Schedule.swift in Sources */,
 				D0DF5D5A270D088F009374E7 /* EventTableViewCell.swift in Sources */,

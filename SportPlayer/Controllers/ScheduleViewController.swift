@@ -10,18 +10,21 @@ import DiffableDataSources
 
 class ScheduleViewController: UIViewController {
     
+    private var viewModel: ScheduleViewModelProtocol?
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: UIScreen.main.bounds, style: UITableView.Style.plain)
     return tableView
     }()
-    lazy var dataSource = TableViewDiffableDataSource<Section, Shedule>(tableView: tableView) { tableView, indexPath, user in
+    private lazy var dataSource = TableViewDiffableDataSource<Section, Schedule>(tableView: tableView) { tableView, indexPath, user in
             let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.cellIdentifier, for: indexPath) as! EventTableViewCell
             
             return cell
         }
 
-    init(){
+    init(viewModel: ScheduleViewModelProtocol){
         super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
     }
     
     required init?(coder: NSCoder) {
@@ -31,7 +34,7 @@ class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
-       
+        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.cellIdentifier)
     }
 
 }

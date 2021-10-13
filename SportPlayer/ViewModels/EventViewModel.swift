@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import Kingfisher
 
 protocol EventListViewModelProtocol {
-    func fetch()
+    
+    func fetchEvents()
     func numberOfRowsInSection (_ section: Int) -> Int
     func eventAtIndex (_ index: Int) -> EventViewModel
     var tableView: UITableView? { get set }
@@ -17,15 +17,15 @@ protocol EventListViewModelProtocol {
 
 class EventListViewModel: EventListViewModelProtocol {
 
-    private let manager: EventListManagerProtocol
+    private let manager: ListManagerProtocol
     private var events:[Event] = []
     weak var tableView: UITableView?
     
-    init(manager: EventListManagerProtocol = EventListManager()) {
+    init(manager: ListManagerProtocol = ListManager()) {
         self.manager = manager
     }
     
-    func fetch(){
+    func fetchEvents(){
         manager.getEvents { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -37,6 +37,7 @@ class EventListViewModel: EventListViewModelProtocol {
             case .failure(let error):
                 let message = error.localizedDescription
                 print(message)
+                // TODO display error in alert
                 }
         }
     }

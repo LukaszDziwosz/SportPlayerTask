@@ -11,7 +11,7 @@ enum Section {
     case main
 }
 
-struct Shedule: Codable, Hashable {
+struct Schedule: Codable, Hashable {
     let id: String
     let title: String
     let subtitle: String

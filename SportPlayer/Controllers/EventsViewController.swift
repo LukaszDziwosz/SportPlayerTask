@@ -36,11 +36,11 @@ class EventsViewController: UIViewController {
        }
     
     private func fetchEvents() {
-        viewModel?.tableView = tableView
-        viewModel?.fetch()
+        viewModel?.fetchEvents()
     }
 
     private func setupTableView() {
+        viewModel?.tableView = tableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.cellIdentifier)
@@ -82,6 +82,7 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.dateLabel.text = eventVM?.date
         cell.eventImageView.kf.indicatorType = .activity
         cell.eventImageView.kf.setImage(with: URL(string: eventVM!.imageUrl),  options: [.processor(processor)])
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
