@@ -74,11 +74,11 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.cellIdentifier, for: indexPath) as! EventTableViewCell
         let processor = RoundCornerImageProcessor(cornerRadius: 20)
         let eventVM = self.viewModel?.eventAtIndex(indexPath.row)
+        cell.eventImageView.kf.indicatorType = .activity
+        cell.eventImageView.kf.setImage(with: URL(string: eventVM!.imageUrl),  options: [.processor(processor)])
         cell.titleLabel.text = eventVM?.title
         cell.subtitleLabel.text = eventVM?.subtitle
         cell.dateLabel.text = eventVM?.date
-        cell.eventImageView.kf.indicatorType = .activity
-        cell.eventImageView.kf.setImage(with: URL(string: eventVM!.imageUrl),  options: [.processor(processor)])
         cell.accessoryType = .disclosureIndicator
         return cell
     }

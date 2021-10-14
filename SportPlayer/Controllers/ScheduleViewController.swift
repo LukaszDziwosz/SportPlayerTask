@@ -7,6 +7,7 @@
 
 import UIKit
 import DiffableDataSources
+import Kingfisher
 
 class ScheduleViewController: UIViewController {
     
@@ -16,18 +17,25 @@ class ScheduleViewController: UIViewController {
         let tableView = UITableView(frame: UIScreen.main.bounds, style: UITableView.Style.plain)
     return tableView
     }()
+    
     private lazy var dataSource = TableViewDiffableDataSource<Section, Schedule>(tableView: tableView) { tableView, indexPath, schedule in
-            let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.cellIdentifier, for: indexPath) as! EventTableViewCell
-                cell.titleLabel.text = schedule.title
+        let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.cellIdentifier, for: indexPath) as! EventTableViewCell
+        let processor = RoundCornerImageProcessor(cornerRadius: 20)
+        cell.eventImageView.kf.indicatorType = .activity
+        cell.eventImageView.kf.setImage(with: URL(string: schedule.imageUrl),  options: [.processor(processor)])
+        cell.titleLabel.text = schedule.title
+        cell.subtitleLabel.text = schedule.subtitle
+        cell.dateLabel.text = DateFormatter.string(apiDate: schedule.date) //TODO move dataformatter to viewModel
             
-            return cell
-        }
+        return cell
+    }
 
     init(viewModel: ScheduleListViewModelProtocol){
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
         fetchSchedules()
         setupTableView()
+        _ = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(reload), userInfo: nil, repeats: true)
     }
     
     required init?(coder: NSCoder) {
@@ -43,25 +51,28 @@ class ScheduleViewController: UIViewController {
         guard let self = self else { return }
         var snapshot = DiffableDataSourceSnapshot<Section, Schedule>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(result, toSection: .main)
-            DispatchQueue.main.async {
-                self.dataSource.apply(snapshot)
-            }
-        
+        snapshot.appendItems(result)
+        DispatchQueue.main.async {
+            self.dataSource.apply(snapshot, animatingDifferences: true) }
         }
+        //TODO find a way to not loose scroll position when at the bottom of the list
     }
+    
+    @objc func reload() {
+        fetchSchedules()
+        //TODO move to viewModel
+    }
+    
     private func setupTableView() {
-        viewModel?.tableView = tableView
         tableView.delegate = self
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.cellIdentifier)
         tableView.backgroundColor = .clear
         tableView.rowHeight = 90
         view.addSubview(tableView)
-
     }
 
-
 }
+
 extension ScheduleViewController: UITableViewDelegate {
     
 }

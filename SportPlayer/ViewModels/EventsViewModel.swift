@@ -46,6 +46,7 @@ class EventListViewModel: EventListViewModelProtocol {
     func numberOfRowsInSection (_ section: Int) -> Int {
         return events.count
     }
+    
     func eventAtIndex (_ index: Int) -> EventViewModel {
         let event = events[index]
         return EventViewModel(event)

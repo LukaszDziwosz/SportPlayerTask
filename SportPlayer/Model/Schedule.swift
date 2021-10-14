@@ -17,4 +17,8 @@ struct Schedule: Codable, Hashable {
     let subtitle: String
     let date: String
     let imageUrl: String
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+      }
 }
