@@ -41,7 +41,7 @@ class ScheduleListViewModel: ScheduleListViewModelProtocol {
 //        let dateChanged = ordered.map {DateFormatter.string(apiDate: $0.date)
 //        }
 //        print(dateChanged)
-        // TODO Add filter to display tomorrow only and change dates to requested format here
+        // TODO Add filter to display tomorrow only and change dates to requested format here as well
         return ordered
     }
     

@@ -12,7 +12,7 @@ extension DateFormatter {
     static let java: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        //add more modifiers
+        //add more modifiers for region
         return formatter
     }()
     
