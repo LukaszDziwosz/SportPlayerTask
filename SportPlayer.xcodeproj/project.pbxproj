@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D07554212718D5FA00F9B00D /* Developer Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07554202718D5FA00F9B00D /* Developer Notes.swift */; };
 		D07DEE45271741A60044834C /* DiffableDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = D07DEE44271741A60044834C /* DiffableDataSources */; };
 		D07DEE4727174CDA0044834C /* SchedulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DEE4627174CDA0044834C /* SchedulesViewModel.swift */; };
 		D07DEE5C27181D870044834C /* SportPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DEE5B27181D870044834C /* SportPlayerUITests.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D07554202718D5FA00F9B00D /* Developer Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Developer Notes.swift"; sourceTree = "<group>"; };
 		D07DEE4627174CDA0044834C /* SchedulesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesViewModel.swift; sourceTree = "<group>"; };
 		D07DEE4C27181D720044834C /* SportPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07DEE5927181D870044834C /* SportPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,18 +190,19 @@
 		D0DF5D33270CC3CB009374E7 /* SportPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				D0A1D50627136AFA00418F21 /* Managers */,
-				D0DF5D5B270D0A88009374E7 /* Extensions */,
-				D0CF22F42714D5B300B48BB1 /* Views */,
-				D0DF5D57270CFDFE009374E7 /* ViewModels */,
-				D0DF5D4C270CE22E009374E7 /* Controllers */,
 				D0DF5D52270CF0D4009374E7 /* Model */,
+				D0CF22F42714D5B300B48BB1 /* Views */,
+				D0DF5D4C270CE22E009374E7 /* Controllers */,
+				D0DF5D57270CFDFE009374E7 /* ViewModels */,
+				D0A1D50627136AFA00418F21 /* Managers */,
 				D0DF5D4D270CEEB5009374E7 /* Services */,
+				D0DF5D5B270D0A88009374E7 /* Extensions */,
 				D0DF5D34270CC3CB009374E7 /* AppDelegate.swift */,
 				D0DF5D36270CC3CB009374E7 /* SceneDelegate.swift */,
 				D0DF5D42270CC3D2009374E7 /* Info.plist */,
 				D0DF5D3D270CC3D2009374E7 /* Assets.xcassets */,
 				D0DF5D3F270CC3D2009374E7 /* LaunchScreen.storyboard */,
+				D07554202718D5FA00F9B00D /* Developer Notes.swift */,
 			);
 			path = SportPlayer;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				D0DF5D39270CC3CB009374E7 /* EventsViewController.swift in Sources */,
 				D0DF5D56270CFDF0009374E7 /* EventsViewModel.swift in Sources */,
 				D0DF5D4B270CC636009374E7 /* TabBar.swift in Sources */,
+				D07554212718D5FA00F9B00D /* Developer Notes.swift in Sources */,
 				D0A1D50A2713730200418F21 /* Endpoint.swift in Sources */,
 				D0DF5D35270CC3CB009374E7 /* AppDelegate.swift in Sources */,
 				D0CF22F12714888A00B48BB1 /* TableViewCell.swift in Sources */,

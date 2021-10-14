@@ -28,7 +28,25 @@
 		<key>SportPlayer.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>D07DEE4B27181D720044834C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D07DEE5827181D870044834C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D0DF5D30270CC3CB009374E7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
