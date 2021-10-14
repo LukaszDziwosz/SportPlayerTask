@@ -38,5 +38,17 @@ class ListManagerTest: XCTestCase {
             }
         }
     }
+    func testFetchImageFailure() {
+        networking.state = .error(NetworkingError.noData)
+        manager.getEvents { result in
+            switch result {
+                case .success:
+                    XCTFail("Expected failure")
+                case .failure(let error):
+                    XCTAssertEqual(error, .noData)
+            }
+        }
+        
+    }
   
 }

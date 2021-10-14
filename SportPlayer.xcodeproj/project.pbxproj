@@ -120,8 +120,8 @@
 				D07DEE69271835DC0044834C /* Extensions */,
 				D07DEE662718350A0044834C /* Stubs */,
 				D07DEE6E27188C050044834C /* ListManagerTest.swift */,
-				D07DEE642718214C0044834C /* NetworkingMock.swift */,
 				D07DEE7027188EAF0044834C /* ListManagerMock.swift */,
+				D07DEE642718214C0044834C /* NetworkingMock.swift */,
 			);
 			path = SportPlayerTests;
 			sourceTree = "<group>";
