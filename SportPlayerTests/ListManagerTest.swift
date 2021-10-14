@@ -28,6 +28,8 @@ class ListManagerTest: XCTestCase {
             case .success(let events):
                 XCTAssertEqual(events.count, 16)
                 XCTAssertEqual(events[0].id, "1")
+                XCTAssertEqual(events[0].title, "Liverpool v Porto")
+                XCTAssertEqual(events[0].subtitle, "UEFA Champions League")
                 
             case .failure:
                 XCTFail("Expected success")
