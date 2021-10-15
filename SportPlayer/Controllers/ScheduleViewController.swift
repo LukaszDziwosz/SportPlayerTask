@@ -41,10 +41,7 @@ class ScheduleViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        }
+
     
     private func fetchSchedules() {
         viewModel?.fetchSchedules{ [weak self] result in
@@ -55,7 +52,6 @@ class ScheduleViewController: UIViewController {
         DispatchQueue.main.async {
             self.dataSource.apply(snapshot, animatingDifferences: true) }
         }
-        //TODO find a way to not loose scroll position when at the bottom of the list
     }
     
     @objc func reload() {
