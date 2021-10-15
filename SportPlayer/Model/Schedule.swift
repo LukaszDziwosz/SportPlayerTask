@@ -12,13 +12,16 @@ enum Section {
 }
 
 struct Schedule: Codable, Hashable {
-    let id: String
-    let title: String
-    let subtitle: String
-    let date: String
-    let imageUrl: String
+    var id: String
+    var title: String
+    var subtitle: String
+    var date: String
+    var imageUrl: String
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
       }
+    static func == (lhs: Schedule, rhs: Schedule) -> Bool {
+        lhs.id == rhs.id
+    }
 }

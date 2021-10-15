@@ -60,6 +60,7 @@ class ScheduleViewController: UIViewController {
     
     @objc func reload() {
         fetchSchedules()
+        print("reload")
         //TODO move to viewModel
     }
     
